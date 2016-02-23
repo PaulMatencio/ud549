@@ -1,6 +1,22 @@
+// jasmine.getEnv().defaultTimeoutInterval = 5000;
+
 function  AddressBook() {
 	this.Contact = [];
+	this.initialComplete = false;
 };
+
+AddressBook.prototype.getInitialContacts = function() {
+	var self = this;
+	setTimeout(function() {
+		self.initialComplete = true;
+
+		if (cb) {
+			return cb();
+		}
+
+	},3);
+
+}
 
 AddressBook.prototype.addContact = function(contact) {
 	this.Contact.push(contact);
